@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/Vizzard/!svn/ver/64/src/xmladapter
+END
+taskXMLAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/Vizzard/!svn/ver/58/src/xmladapter/taskXMLAdapter.java
+END
+domainXMLAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/Vizzard/!svn/ver/64/src/xmladapter/domainXMLAdapter.java
+END
+DomainXMLAdapterException.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/Vizzard/!svn/ver/58/src/xmladapter/DomainXMLAdapterException.java
+END
+TaskXMLAdapterException.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/Vizzard/!svn/ver/1/src/xmladapter/TaskXMLAdapterException.java
+END

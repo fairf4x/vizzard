@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/Vizzard/!svn/ver/66/src/DataModelException
+END
+DomainException.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/Vizzard/!svn/ver/28/src/DataModelException/DomainException.java
+END
+TaskException.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/Vizzard/!svn/ver/66/src/DataModelException/TaskException.java
+END
+TreeModelException.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/Vizzard/!svn/ver/23/src/DataModelException/TreeModelException.java
+END

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel
+END
+ConstantsSectionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/ConstantsSectionType.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/ObjectFactory.java
+END
+TableType.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/TableType.java
+END
+PddlRequirementsListType.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/PddlRequirementsListType.java
+END
+RelationSectionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/RelationSectionType.java
+END
+RelationDefType.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/RelationDefType.java
+END
+TaskType.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/TaskType.java
+END
+ConstantType.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/ConstantType.java
+END
+ConstantListType.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/ConstantListType.java
+END
+StateVariablesSectionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/StateVariablesSectionType.java
+END
+TaskProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/TaskProperties.java
+END
+ArgumentType.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/ArgumentType.java
+END
+RowType.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/RowType.java
+END
+SignatureType.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/SignatureType.java
+END
+StateVariableDefType.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/Vizzard/!svn/ver/1/src/taskXMLModel/StateVariableDefType.java
+END

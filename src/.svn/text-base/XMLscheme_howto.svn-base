@@ -1,0 +1,17 @@
+The following command will generate whole package domainXMLModel according to definition in domainSchema.xsd:
+
+xjc -p domainXMLModel domainSchema.xsd
+
+
+Visit http://jaxb.java.net/tutorial/ for details.
+
+-----------------------------------------------
+to keep SVN working:
+1. do commit before you update domainSchema.xsd
+2. make your update
+3. remove package domainXMLModel
+4. run xjc command
+5. copy domainSchema.xsd and domainXMLModel package out of the project
+6. update SVN (it will reload old stuff)
+7. copy generated domainXMLModel and domainSchema.xsd
+8. commit change !!

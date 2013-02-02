@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+            jxb:version="2.0">
+
+    <!-- root element -->
+    <xsd:element name="task" type="taskType"/>
+
+    <!-- root element definition -->
+    <xsd:complexType name="taskType">
+        <xsd:sequence>
+            <xsd:element name="properties" type="taskProperties"/>
+            <xsd:element name="constants" type="constantsSectionType"/>
+            <xsd:element name="relations" type="relationSectionType"/>
+            <xsd:element name="stateVariables" type="stateVariablesSectionType"/>
+        </xsd:sequence>  
+    </xsd:complexType>
+    
+    <!-- task properties START -->
+    <xsd:complexType name="taskProperties">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="domain" type="xsd:string"/>
+            <xsd:element name="requirements" type="pddlRequirementsListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="pddlRequirementsListType">
+        <xsd:sequence>
+            <xsd:element name="requirement" type="xsd:string" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- task properties END -->
+    
+    <!-- constants definition START -->
+    <xsd:complexType name="constantsSectionType">
+        <xsd:sequence>
+            <xsd:element name="constantList" type="constantListType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="constantListType">
+        <xsd:sequence>
+            <xsd:element name="constant" type="constantType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="className" type="xsd:string"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="constantType">
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+    <!-- constants definition END -->
+    
+    <!-- relations definition START -->
+    <xsd:complexType name="relationSectionType">
+        <xsd:sequence>
+            <xsd:element name="relationDef" type="relationDefType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="relationDefType">
+        <xsd:sequence>
+            <xsd:element name="signature" type="signatureType"/>
+            <xsd:element name="table" type="tableType"/>
+        </xsd:sequence>
+        <xsd:attribute name="relationName" type="xsd:string"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="signatureType">
+        <xsd:sequence>
+            <xsd:element name="argument" type="argumentType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+        
+    <xsd:complexType name="argumentType">
+        <xsd:attribute name="number" type="xsd:int"/>
+        <xsd:attribute name="class" type="xsd:string"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="tableType">
+        <xsd:sequence>
+            <xsd:element name="row" type="rowType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="rowType">
+        <xsd:sequence>
+            <xsd:element name="column" type="xsd:string" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- relations definition END -->
+    
+    <!-- stateVariables definition START -->
+    <xsd:complexType name="stateVariablesSectionType">
+        <xsd:sequence>
+            <xsd:element name="stateVariableDef" type="stateVariableDefType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="stateVariableDefType">
+        <xsd:sequence>
+            <xsd:element name="signature" type="signatureType"/>
+            <xsd:element name="table" type="tableType"/>
+        </xsd:sequence>
+        <xsd:attribute name="stateVariableName" type="xsd:string"/>
+    </xsd:complexType>
+    
+    <!-- signatureType and tableType defined previously for relation definition -->
+    <!-- stateVariables definition END -->
+    
+</xsd:schema>

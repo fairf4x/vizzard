@@ -1,0 +1,2 @@
+main.class=ApplicationGUI.MainWindow
+run.jvmargs=-ea

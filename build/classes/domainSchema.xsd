@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+            jxb:version="2.0">
+
+    <!-- root element -->
+    <xsd:element name="domain" type="domainType"/>
+
+    <!-- root element definition -->
+    <xsd:complexType name="domainType">
+        <xsd:sequence>
+            <xsd:element name="properties" type="domainProperties" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="classes" type="classTreeType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="relations" type="relationListType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="stateVariables" type="stateVariableListType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="operators" type="operatorListType" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>  
+    </xsd:complexType>
+    
+    <!-- domain properties START -->
+    <xsd:complexType name="domainProperties">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="requirements" type="pddlRequirementsListType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="pddlRequirementsListType">
+        <xsd:sequence>
+            <xsd:element name="requirement" type="xsd:string" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- domain properties END -->
+    
+    <!-- classes definition START -->
+    <xsd:complexType name="classTreeType">
+        <xsd:sequence>
+            <xsd:element name="node" type="nodeType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="nodeType">
+        <xsd:sequence>
+            <xsd:element name="type" type="xsd:string"/>
+            <xsd:element name="children" type="childrenListType"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="childrenListType">
+        <xsd:sequence>
+           <xsd:element name="node" type="nodeType"
+           maxOccurs="unbounded"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- classes definition END -->
+    
+    <!-- relations definition START -->
+    <xsd:complexType name="relationListType">
+        <xsd:sequence>
+        <xsd:element name="relation" type="relationType"
+           maxOccurs="unbounded"/>     
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="relationType">
+        <xsd:sequence>
+            <xsd:element name="argument" type="argumentType"
+            maxOccurs="unbounded"/>
+        </xsd:sequence> 
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="argumentType">
+        <xsd:attribute name="number" type="xsd:int"/>
+        <xsd:attribute name="class" type="xsd:string"/>
+    </xsd:complexType>    
+    <!-- relations definition END -->
+    
+    <!-- stateVariables definition START -->
+    <xsd:complexType name="stateVariableListType">
+        <xsd:sequence>
+        <xsd:element name="stateVariable" type="stateVariableType"
+           maxOccurs="unbounded"/>     
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="stateVariableType">
+        <xsd:sequence>
+            <xsd:element name="argument" type="argumentType"
+            maxOccurs="unbounded"/>
+            <xsd:element name="valueRange" type="valueRangeType"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="valueRangeType">
+        <xsd:sequence>
+            <xsd:element name="class" type="xsd:string"
+            maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!-- stateVariables definition START -->
+    
+    <!-- operators definition START -->
+    <xsd:complexType name="operatorListType">
+        <xsd:sequence>
+            <xsd:element name="operator" type="operatorType"
+                maxOccurs="unbounded"/>    
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="operatorType">
+        <xsd:sequence>
+            <xsd:element name="expression" type="expressionType"
+                maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="expressionType">
+        <xsd:sequence>
+            <xsd:element name="slot" type="slotType"
+                maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="type" type="xsd:byte"/> <!-- expression type: relation/prevailing state var./non-prevailing state var.-->
+        <xsd:attribute name="delegate" type="xsd:string"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="slotType">
+        <xsd:sequence>
+            <xsd:element name="content" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="contentType" type="xsd:string"/> <!-- content type: variable name/constant name/wildcard-->
+        <xsd:attribute name="slotIndex" type="xsd:int"/>
+        <xsd:attribute name="contentClass" type="xsd:string"/> <!-- determine top (most general) class for objects inside this slot -->
+    </xsd:complexType>
+    <!-- operators definition END -->
+</xsd:schema>
